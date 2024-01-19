@@ -33,23 +33,15 @@ jobs:
           ln -s ../Runner.app
           cd...
           zip -r app.ipa Payload
-      - name: Archive Production Artifacts
-        uses: actions/upload-artifact@v3
-        with: 
+          
+      - name: Download IPA Artifact
+        uses: actions/download-artifact@v3
+        with:
           name: IPA
           path: build/ios/iphoneos/app.ipa
 
-  unzip-artifact:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download IPA Artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: IPA
-        path: build/ios/iphoneos/app.ipa
-
-    - name: Unzip IPA Artifact
-      run: |
-        unzip -o build/ios/iphoneos/app.ipa -d unziped_artifact
+      - name: Unzip IPA Artifact
+        run: |
+          unzip -o build/ios/iphoneos/app.ipa -d unziped_artifact    
 # push to master, main, develop
 # pull request on main master
