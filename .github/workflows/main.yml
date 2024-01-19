@@ -26,15 +26,13 @@ jobs:
 
       - run: flutter build apk --release --split-per-abi
       - run: |
-          flutter build ios --no-codesign
+          flutter build ipa --no-codesign
           cd build/ios/iphoneos
           mkdir Payload
           cd Payload
           ln -s ../Runner.app
           cd ..
           zip -r app.ipa Payload
-      - run: |
-          flutter build ipa
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with: 
