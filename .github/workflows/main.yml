@@ -43,7 +43,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: IPA
-          path: build/ios/iphoneos/app.ipa
 
       - name: Unzip IPA Artifact
         run: |
