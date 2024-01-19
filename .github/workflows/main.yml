@@ -33,19 +33,12 @@ jobs:
           ln -s ../Runner.app
           cd ..
           zip -r app.ipa Payload
+      - run: |
+          flutter build ipa
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with: 
           name: IPA
-          path: build/ios/iphoneos/app.ipa
-          
-      - name: Download IPA Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: IPA
-
-      - name: Unzip IPA Artifact
-        run: |
-          unzip -o build/ios/iphoneos/app.ipa -d unziped_artifact    
+          path: build/ios/iphoneos/app.ipa   
 # push to master, main, develop
 # pull request on main master
