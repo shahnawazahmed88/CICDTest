@@ -33,6 +33,11 @@ jobs:
           ln -s ../Runner.app
           cd ..
           zip -r app.ipa Payload
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifact@v3
+        with: 
+          name: IPA
+          path: build/ios/iphoneos/app.ipa
           
       - name: Download IPA Artifact
         uses: actions/download-artifact@v3
