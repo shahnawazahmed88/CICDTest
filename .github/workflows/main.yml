@@ -31,8 +31,6 @@ jobs:
           mkdir Payload
           cd Payload
           ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with: 
