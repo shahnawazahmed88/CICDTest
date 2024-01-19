@@ -41,7 +41,6 @@ jobs:
 
   unzip-artifact:
     runs-on: ubuntu-latest
-
     steps:
     - name: Download IPA Artifact
       uses: actions/download-artifact@v3
