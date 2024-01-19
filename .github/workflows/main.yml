@@ -31,7 +31,7 @@ jobs:
           mkdir Payload
           cd Payload
           ln -s ../Runner.app
-          cd..
+          cd ..
           zip -r app.ipa Payload
           
       - name: Download IPA Artifact
